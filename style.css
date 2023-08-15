@@ -3,7 +3,7 @@
   --color2: #ffd0d0;
   --color3: #f5f5f5;
   --color4: #080202;
-  --shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  --shadow: 0 5px 5px rgba(0 0 0, 0.5);
 }
 
 body {
@@ -50,6 +50,7 @@ body {
 .hero a {
   color: var(--color3);
   background-color: var(--color1);
+  box-shadow: var(--shadow);
 }
 
 .hero a:hover {
