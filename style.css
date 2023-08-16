@@ -78,6 +78,9 @@ body {
   background-image: url(img/bg-home.png);
   background-size: cover;
   min-height: 100vh;
+  margin-top: -6.1rem;
+  padding-top: 15rem;
+  padding-bottom: 5rem;
 }
 
 /* media query */
