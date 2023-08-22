@@ -42,11 +42,11 @@ body {
 }
 
 .hero h4 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .hero p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .hero a {
@@ -215,12 +215,16 @@ body {
     font-size: 2rem;
     text-align: center;
   }
+
+  .sticky-top {
+    overflow: hidden;
+  }
 }
 
 /* ponsel */
 @media (max-width: 576px) {
   html {
-    font-size: 65%;
+    font-size: 68%;
   }
 
   .simply-countdown > .simply-section {

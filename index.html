@@ -174,10 +174,12 @@
   </section>
   <!-- info end -->
 
+  <!-- script bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
   </script>
 
+  <!-- script countdown -->
   <script>
     simplyCountdown(".simply-countdown", {
       year: 2023, // required
@@ -203,6 +205,20 @@
           plural: "seconds",
         },
       },
+    });
+  </script>
+
+  <!-- script hamburger menu -->
+  <script>
+    const stickyTop = document.querySelector('.sticky-top');
+    const offcanvas = document.querySelector('.offcanvas');
+
+    offcanvas.addEventListener('show.bs.offcanvas', function () {
+      stickyTop.style.overflow = 'visible';
+    });
+
+    offcanvas.addEventListener('hidden.bs.offcanvas', function () {
+      stickyTop.style.overflow = 'hidden';
     });
   </script>
 </body>
