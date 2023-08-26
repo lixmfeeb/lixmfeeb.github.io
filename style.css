@@ -90,7 +90,8 @@ body {
 }
 
 .home h2,
-.info h2 {
+.info h2,
+.story h2 {
   color: var(--color1);
   font-family: "Sacramento", cursive;
   font-size: 5rem;
@@ -173,6 +174,25 @@ body {
 .info .card-footer {
   border-top: 1px solid #898989;
   font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.story {
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+}
+
+.story span {
+  text-transform: uppercase;
+  color: #555555;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.story p {
+  font-size: 1rem;
   font-weight: 300;
 }
 
