@@ -211,7 +211,7 @@ body {
     font-size: 75%;
   }
 
-  .simply-countdown > .simply-section {
+  .simply-countdown>.simply-section {
     padding: 60px;
   }
 
@@ -226,7 +226,7 @@ body {
     font-size: 70%;
   }
 
-  .simply-countdown > .simply-section {
+  .simply-countdown>.simply-section {
     padding: 50px;
     margin: 5px;
   }
@@ -247,7 +247,7 @@ body {
     font-size: 68%;
   }
 
-  .simply-countdown > .simply-section {
+  .simply-countdown>.simply-section {
     padding: 35px;
     margin: 2px;
   }
