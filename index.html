@@ -37,7 +37,7 @@
       <h1>Ferry & Dini</h1>
       <p>Will hold wedding receptions in:</p>
       <div class="simply-countdown"></div>
-      <a href="#undangan" class="btn btn-lg mt-3">Buka Undangan</a>
+      <a href="#undangan" class="btn btn-lg mt-3" onclick="enableScroll()">Buka Undangan</a>
     </main>
   </section>
   <!-- hero end -->
@@ -319,19 +319,19 @@
         //words displayed into the countdown
         days: {
           singular: "day",
-          plural: "days",
+          plural: "hari",
         },
         hours: {
           singular: "hour",
-          plural: "hours",
+          plural: "jam",
         },
         minutes: {
           singular: "minute",
-          plural: "minutes",
+          plural: "menit",
         },
         seconds: {
           singular: "second",
-          plural: "seconds",
+          plural: "detik",
         },
       },
     });
@@ -349,6 +349,32 @@
     offcanvas.addEventListener("hidden.bs.offcanvas", function () {
       stickyTop.style.overflow = "hidden";
     });
+  </script>
+
+  <!-- script disable scrolling -->
+  <script>
+    const rootElement = document.querySelector(":root");
+
+    function disableScroll() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+      window.onscroll = function () {
+        window.scrollTo(screenTop, screenLeft);
+      }
+
+      rootElement.style.scrollBehavior = 'auto';
+    }
+
+    function enableScroll() {
+      window.onscroll = function () {}
+      rootElement.style.scrollBehavior = 'smooth';
+      localStorage.setItem('opened', 'true');
+    }
+
+    if (!localStorage.getItem('opened')) {
+      disableScroll();
+    }
   </script>
 </body>
 
