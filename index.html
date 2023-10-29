@@ -296,6 +296,16 @@
             <img src="img/gallery/thumbnail/4.png" alt="" class="img-fluid w-100 rounded">
           </a>
         </div>
+        <div class="col mt-3">
+          <a href="img/gallery/1.png" data-toggle="lightbox" data-gallery="mygallery">
+            <img src="img/gallery/thumbnail/1.png" alt="" class="img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="img/gallery/2.png" data-toggle="lightbox" data-gallery="mygallery">
+            <img src="img/gallery/thumbnail/2.png" alt="" class="img-fluid w-100 rounded">
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -404,6 +414,17 @@
   </footer>
   <!-- footer end -->
 
+  <!-- backsound audio start -->
+  <div id="audio-container">
+    <audio id="song" autoplay loop>
+      <source src="audio/audio.mp3" type="audio/mp3">
+    </audio>
+    <div class="audio-icon-wrapper" style="display: none;">
+      <i class="bi bi-disc"></i>
+    </div>
+  </div>
+  <!-- backsound audio end -->
+
   <!-- script bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
@@ -458,6 +479,10 @@
   <!-- script disable scrolling -->
   <script>
     const rootElement = document.querySelector(":root");
+    const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+    const audioIcon = document.querySelector('.audio-icon-wrapper i');
+    const song = document.querySelector('#song');
+    let isPlaying = false;
 
     function disableScroll() {
       scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -473,12 +498,34 @@
     function enableScroll() {
       window.onscroll = function () {}
       rootElement.style.scrollBehavior = 'smooth';
-      localStorage.setItem('opened', 'true');
+      // localStorage.setItem('opened', 'true');
+      playAudio();
     }
 
-    if (!localStorage.getItem('opened')) {
-      disableScroll();
+    function playAudio() {
+      audioIconWrapper.style.display = 'flex';
+      song.play();
+      isPlaying = true;
     }
+
+    audioIconWrapper.onclick = function () {
+      if (isPlaying) {
+        song.pause();
+        audioIcon.classList.remove('bi-disc');
+        audioIcon.classList.add('bi-pause-circle');
+      } else {
+        song.play();
+        audioIcon.classList.add('bi-disc');
+        audioIcon.classList.remove('bi-pause-circle');
+      }
+
+      isPlaying = !isPlaying;
+    }
+
+    // if (!localStorage.getItem('opened')) {
+    //   disableScroll();
+    // }
+    disableScroll();
   </script>
 
   <!-- script googlesheat -->
