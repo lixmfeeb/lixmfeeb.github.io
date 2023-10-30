@@ -33,11 +33,11 @@
   <section id="hero"
     class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
     <main>
-      <h4>Kepada Bapak/Ibu/Saudara/i,</h4>
+      <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
       <h1>Ferry & Dini</h1>
-      <p>Will hold wedding receptions in:</p>
+      <p>Akan melangsungkan resepsi pernikahan dalam:</p>
       <div class="simply-countdown"></div>
-      <a href="#home" class="btn btn-md mt-3" onclick="enableScroll()">Buka Undangan</a>
+      <a href="#home" class="btn btn-lg mt-3" onclick="enableScroll()">Buka Undangan</a>
     </main>
   </section>
   <!-- hero end -->
@@ -144,6 +144,13 @@
             Alamat: Gedung PCC (Pontianak Convention Centre), <br />Jl Slt.
             Abdurrahman. 7-9 Akcaya, Kec. Pontianak Selatan, Kota Pontianak
           </p>
+          <!-- google maps start -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31918.540116355813!2d109.2930678!3d-0.0364145!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d59aaa158addb%3A0x9916ae6426d80357!2sPontianak%20Convention%20Centre!5e0!3m2!1sid!2sid!4v1698666135244!5m2!1sid!2sid"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <!-- google maps end -->
+
           <a href="https://goo.gl/maps/6yFruVvK5tGFg7GC7" target="_blank" class="btn btn-light btn-sm my-4">Klik untuk
             membuka peta</a>
           <p class="description">
@@ -350,6 +357,33 @@
           <button class="btn btn-primary" style="margin-top: 21px;">Kirim</button>
         </div>
       </form>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div id="disqus_thread"></div>
+          <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function () { // DON'T EDIT BELOW THIS LINE
+              var d = document,
+                s = d.createElement('script');
+              s.src = 'https://ferrin-wedding.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+              Disqus.</a></noscript>
+        </div>
+      </div>
+
     </div>
   </section>
   <!-- rsvp end -->
@@ -545,6 +579,17 @@
           })
       });
     });
+  </script>
+
+  <!-- script parameter nama -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = urlParams.get('n') || '';
+    const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
+    const namaContainer = document.querySelector('.hero h4 span');
+    namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
+
+    document.querySelector('#nama').value = nama;
   </script>
 </body>
 
